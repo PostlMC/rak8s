@@ -73,3 +73,13 @@
     delay: 15
     timeout: 120
   become: False
+
+- name: Mount NAS share
+  mount:
+    path: /nas
+    src: "{{ nas_mount }}"
+    fstype: nfs
+    opts: rw,auto,hard,intr
+    state: mounted
+  tags:
+    - filesystem
