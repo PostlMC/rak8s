@@ -39,7 +39,7 @@ flannel_version: "master"
 # v0.9.0
 # v0.8.0
 # v0.7.1
-# v0.7.0  
+# v0.7.0
 
-nas_mount: 192.168.42.244:/volume1/rpi-storage
+nas_mount: snolgy.internal.gicsm.org:/volume1/rpi-storage
 
