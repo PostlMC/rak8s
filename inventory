@@ -1,8 +1,8 @@
 [prod]
-rpi-01    ansible_host=192.168.42.200
-rpi-02    ansible_host=192.168.42.201
-rpi-03    ansible_host=192.168.42.202
-rpi-04    ansible_host=192.168.42.203
+rpi-00    ansible_host=192.168.42.200
+rpi-01    ansible_host=192.168.42.201
+rpi-02    ansible_host=192.168.42.202
+rpi-03    ansible_host=192.168.42.203
 
 [master]
-rpi-01    ansible_host=192.168.42.200
+rpi-00    ansible_host=192.168.42.200
