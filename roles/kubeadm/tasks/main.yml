@@ -21,8 +21,11 @@
   when: docker_there.stat.exists == False
   register: docker_installed
 
-- name: Lock docker version to {{ docker_ce_version}}
-  command: /usr/bin/apt-mark hold docker-ce
+- name: Lock docker version to {{ docker_ce_version }}
+  command: /usr/bin/apt-mark hold {{ item }}
+  with_items:
+    - docker-ce
+    - docker-ce-cli
   when: docker_installed.changed
 
 - name: Pass bridged IPv4 traffic to iptables' chains
@@ -49,7 +52,7 @@
     owner: root
     group: root
     mode: 0644
-    
+
 - name: apt-get update
   apt:
     update_cache: yes
@@ -65,3 +68,12 @@
     - kubelet
     - kubeadm
     - kubectl
+  register: kube_installed
+
+- name: Hold K8s packages
+  command: /usr/bin/apt-mark hold {{ item }}
+  with_items:
+    - kubelet
+    - kubeadm
+    - kubectl
+  when: kube_installed.changed
