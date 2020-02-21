@@ -41,5 +41,4 @@ flannel_version: "master"
 # v0.7.1
 # v0.7.0
 
-nas_mount: snolgy.internal.gicsm.org:/volume1/rpi-storage
-
+nas_mount: nas.internal.gicsm.org:/volume1/rpi-storage
